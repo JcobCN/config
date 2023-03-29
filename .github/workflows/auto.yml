@@ -36,16 +36,16 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
-          tag_name: ${{ github.ref }}
+          tag_name: v0.0.1
       #- name: ghcmd
       #  env:        
       #    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
       #  run: | 
       #    gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/JcobCN/config/releases 
-      - name: release
-        uses: ncipollo/release-action@v1
-        with:
+      #- name: release
+      #  uses: ncipollo/release-action@v1
+      #  with:
           #artifacts: "release.tar.gz,foo/*.txt"
           #bodyFile: "body.md"
-          name: v0.0.1
-          allowUpdates: true
+          #name: v0.0.1
+          #allowUpdates: true
