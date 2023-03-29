@@ -30,7 +30,7 @@ jobs:
         uses: softprops/action-gh-release@v1
         #if: steps.tag.outputs.status == 'success' && !cancelled()
         env:
-          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          GITHUB_TOKEN: ${{ github.token }}
         with:
           tag_name: v0.0.1
           
