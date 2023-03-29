@@ -27,20 +27,14 @@ jobs:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
       - uses: actions/checkout@v3
       
-      - name: ghcmd
-        env:        
-          GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        run: | 
-          gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/JcobCN/config/releases 
-      
+      #- name: ghcmd
+      #  env:        
+      #    GH_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      #  run: | 
+      #    gh api -H "Accept: application/vnd.github+json" -H "X-GitHub-Api-Version: 2022-11-28" /repos/JcobCN/config/releases 
       - name: release
-        uses: softprops/action-gh-release@v1
-        #if: steps.tag.outputs.status == 'success' && !cancelled()
-        env:
-          GITHUB_TOKEN: ${{ github.token }}
+        uses: ncipollo/release-action@v1
         with:
-          tag_name: ${{ github.ref }}
-          
-          #body_path: To do new Release.
-          #files: ${{github.workspace}}/build/key.zip
-
+          #artifacts: "release.tar.gz,foo/*.txt"
+          #bodyFile: "body.md"
+          name: v0.0.1
