@@ -1,6 +1,6 @@
-# vimrc  
-
+# vimrc
 my usual vim config
+
 curl https://cdn.jsdelivr.net/gh/JcobCN/config@master/.vimrc -o ~/.vimrc
 
 # show-git-branch
