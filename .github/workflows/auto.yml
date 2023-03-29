@@ -20,6 +20,8 @@ jobs:
   build:
     # The type of runner that the job will run on
     runs-on: ubuntu-latest
+    permissions:
+      contents: write
 
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
@@ -40,4 +42,4 @@ jobs:
           #artifacts: "release.tar.gz,foo/*.txt"
           #bodyFile: "body.md"
           name: v0.0.1
-          tag: v0.0.1
+          allowUpdates: true
