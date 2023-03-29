@@ -32,7 +32,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ github.token }}
         with:
-          tag_name: v0.0.1
+          tag_name: ${{ github.ref }}
           
           #body_path: To do new Release.
           #files: ${{github.workspace}}/build/key.zip
