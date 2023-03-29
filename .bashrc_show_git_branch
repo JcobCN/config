@@ -1,3 +1,4 @@
+# github action
 #~/.bashrc
 
 function git_branch {
