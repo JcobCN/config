@@ -40,3 +40,4 @@ jobs:
           #artifacts: "release.tar.gz,foo/*.txt"
           #bodyFile: "body.md"
           name: v0.0.1
+          tag: ${{ github.ref }}
