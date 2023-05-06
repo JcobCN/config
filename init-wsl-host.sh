@@ -8,7 +8,7 @@
 ipaddr=$(ip -4 addr show dev eth0 | egrep 'inet ([0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3})' | awk '{print $2}' | awk -F/ '{print $1}')
 hostName='wsl.local'
 sed -i "/${hostName}/d" /mnt/c/Windows/System32/drivers/etc/hosts
-echo "\r${ipaddr} ${hostName}" >> /mnt/c/Windows/System32/drivers/etc/hosts
+echo "${ipaddr} ${hostName}" >> /mnt/c/Windows/System32/drivers/etc/hosts
 
 sed -i "/${hostName}/d" /etc/hosts
 echo "${ipaddr} ${hostName}" >> /etc/hosts
